@@ -6,7 +6,6 @@ function reader(name) {
 
   pdf(dataBuffer).then(function (data) {
     // PDF text
-    console.log(JSON.stringify(data.text));
     return data.text;
   });
 }
