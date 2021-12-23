@@ -20,6 +20,7 @@ app.post("/upload", (req, res) => {
     }
     const reader = require("./services");
     const datos = reader(`src/files/${filename}`);
+    console.log(datos);
     return res.json({ message: JSON.stringify(datos), code: 200 });
   });
 });
