@@ -15,11 +15,11 @@ app.post("/upload", (req, res) => {
 
   file.mv(`${newpath}${filename}`, (err) => {
     if (err) {
-      console.log(err);
+      console.log("Hola");
       return res.status(500).send({ message: "File upload failed", code: 200 });
     }
     const reader = require("./services");
-    const datos = reader(filename);
+    const datos = reader(`src/${filename}`);
     return res.status(200).send({ message: datos, code: 200 });
   });
 });
