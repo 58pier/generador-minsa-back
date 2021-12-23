@@ -19,7 +19,7 @@ app.post("/upload", (req, res) => {
       return res.status(500).send({ message: "File upload failed", code: 200 });
     }
     const reader = require("./services");
-    const datos = reader(`src/${filename}`);
+    const datos = reader(`src/files/${filename}`);
     return res.status(200).send({ message: datos, code: 200 });
   });
 });
