@@ -15,7 +15,7 @@ app.post("/upload", (req, res) => {
 
   file.mv(`${newpath}${filename}`, (err) => {
     if (err) {
-      console.log("Hola");
+      console.log("err");
       return res.status(500).send({ message: "File upload failed", code: 200 });
     }
     return res.status(200).send({ message: "File Uploaded", code: 200 });
