@@ -20,7 +20,7 @@ app.post("/upload", (req, res) => {
     }
     const reader = require("./services");
     const datos = reader(`src/files/${filename}`);
-    return res.status(200).send({ message: datos, code: 200 });
+    return res.status(200).send({ message: JSON.stringify(datos), code: 200 });
   });
 });
 app.set("port", process.env.PORT || 3000);
