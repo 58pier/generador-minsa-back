@@ -16,11 +16,11 @@ app.post("/upload", (req, res) => {
   file.mv(`${newpath}${filename}`, (err) => {
     if (err) {
       console.log(err);
-      res.status(500).send({ message: "File upload failed", code: 200 });
+      return res.status(500).send({ message: "File upload failed", code: 200 });
     }
     const reader = require("./services");
     const datos = reader(filename);
-    res.status(200).send({ message: datos, code: 200 });
+    return res.status(200).send({ message: datos, code: 200 });
   });
 });
 app.set("port", process.env.PORT || 3000);
