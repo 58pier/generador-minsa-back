@@ -21,7 +21,8 @@ app.post("/upload", (req, res) => {
     res.status(200).send({ message: "File Uploaded", code: 200 });
   });
 });
-
-app.listen(3000, () => {
+app.set("port", process.env.PORT || 3000);
+app.listen(app.get("port"), () => {
   console.log("Server running successfully on 3000");
 });
+
